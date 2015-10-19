@@ -91,7 +91,7 @@ public class ScreenManager extends Thread {
 				Thread.sleep(10);
 			}
 		 }catch(IOException e) {
-			 e.printStackTrace();
+			 System.out.println(e.getMessage());
 		 } catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {

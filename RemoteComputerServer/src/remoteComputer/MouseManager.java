@@ -13,6 +13,11 @@ public class MouseManager extends Thread {
 	private Socket socket;
 	private String s="";
 	private remouse rem;
+	
+	/**
+	 * Constructor to initialize class variables
+	 * @param socket The socket over which mouse event data will be transferred
+	 */
 	public MouseManager(Socket socket) {
 		
 		this.socket = socket;
@@ -24,7 +29,9 @@ public class MouseManager extends Thread {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Method to handle data transfer related to mouse events
+	 */
 	@Override
 	public void run() {
 		super.run();

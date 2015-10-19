@@ -11,6 +11,11 @@ public class remouse {
 	{
 		 robot=new Robot();
 	}
+	/**
+	 * Method to move mouse according to the data received
+	 * @param args Array containing coordinates of destination mouse location
+	 * @throws Exception
+	 */
 	public void move(String[] args)throws Exception {
 		float dx=Float.parseFloat(args[0])/100;
 		float dy=Float.parseFloat(args[1])/100;
@@ -19,6 +24,12 @@ public class remouse {
 		for(int i=0;i<=100;i++)
 		robot.mouseMove((int)(dx*i)+X, (int)(dy*i)+Y);
 	}
+	
+	/**
+	 * Method to execute mouse click events
+	 * @param x Code to determine type of mouse action to be performed
+	 * @throws Exception
+	 */
 	public void Click(int x)throws Exception {
 		
 		if(x==10)

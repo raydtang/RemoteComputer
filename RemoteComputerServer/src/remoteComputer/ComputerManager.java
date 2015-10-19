@@ -10,13 +10,22 @@ public class ComputerManager extends Thread {
 	 ServerSocket serverSocketImage, serverSocketMouse;
 	 Socket socketImage = null,socketMouse = null ;
 	 String s="";
-	 
+	 /**
+	  * Constructor to initialize class variables 
+	  * @param port The ports to listen to. port and port + 1
+	  * @throws IOException
+	  * @throws AWTException
+	  */
 	 public ComputerManager(int port)throws IOException, AWTException {
 		 serverSocketImage = new ServerSocket(port + 1);
 		 serverSocketImage.setSoTimeout(10000);
 		 serverSocketMouse = new ServerSocket(port);
 		 serverSocketMouse.setSoTimeout(10000);
 	 }
+	 
+	 /**
+	  * Method to handle the connection with remote client
+	  */
 	 @Override
 	 public void run()
 	 {

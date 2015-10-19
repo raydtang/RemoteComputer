@@ -19,6 +19,11 @@ public class ImageTransferThread extends Thread {
     static byte[] receivedByte;
     boolean messageFlag=false;
 
+    /**
+     * Constructor to initialise class variables
+     * @param imageTransferSocket The socket over which the screenshots will be transferred
+     * @param mHandler Instance of the UI handler
+     */
     ImageTransferThread(Socket imageTransferSocket, Handler mHandler) {
         this.imageTransferSocket = imageTransferSocket;
         this.mHandler = mHandler;
@@ -29,6 +34,9 @@ public class ImageTransferThread extends Thread {
         }
     }
 
+    /**
+     * Method to handle the data transfer, over wifi, concerning only the screenshots
+     */
     @Override
     public void run() {
         super.run();

@@ -19,6 +19,13 @@ public class ConnectorThread extends Thread {
     public static MouseThread mouseThread;
     public static ImageTransferThread imageTransferThread;
 
+    /**
+     * Constructor to initialise the class variables
+     * @param serverIP The remote server IP
+     * @param serverPortMouse The server port which will handle data transfers associated to mouse events
+     * @param connected Flag variable to indicate state of connection
+     * @param mHandler Instance of the UI handler
+     */
     ConnectorThread(String serverIP, String serverPortMouse, boolean connected, Handler mHandler) {
 
         this.serverIP = serverIP;
@@ -28,6 +35,9 @@ public class ConnectorThread extends Thread {
         this.mHandler = mHandler;
     }
 
+    /**
+     * Method to handle connection with remote server
+     */
     @Override
     public void run() {
         try {

@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     MouseThread mouseThread = null;
     ImageTransferThread imageTransferThread = null;
 
+    /**
+     * Handler to update UI objects eg. the imageView screen
+     */
     private final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message message) {
@@ -59,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * Method containing the action listeners
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
             screenPad = (FrameLayout) findViewById(R.id.screenPad);
             screenPad.setEnabled(false);
             left = (Button) findViewById(R.id.leftClick);
+            /**
+             * Listener to handle Left Clicks
+             */
             left.setOnTouchListener(new View.OnTouchListener() {
 
                 @Override
@@ -91,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             right = (Button) findViewById(R.id.rightClick);
+            /**
+             * Method to handle Right Click
+             */
             right.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -117,6 +130,9 @@ public class MainActivity extends AppCompatActivity {
             connect.setOnClickListener(connectListener);
 
             screen = (ImageView) findViewById(R.id.imageView);
+            /**
+             * Callback Method to handle mouse pad drag and click events
+             */
             screen.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -165,6 +181,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Closes the sockets which are active
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -174,6 +193,9 @@ public class MainActivity extends AppCompatActivity {
             imageTransferThread.connected = false;
     }
 
+    /**
+     * Listener to start the connection thread
+     */
     private View.OnClickListener connectListener = new View.OnClickListener() {
 
         @Override

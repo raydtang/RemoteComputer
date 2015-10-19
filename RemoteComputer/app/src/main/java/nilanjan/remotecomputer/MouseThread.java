@@ -29,11 +29,18 @@ public class MouseThread extends Thread {
         }
     }
 
+    /**
+     * Updates the message field for any new message to be sent
+     * @param x The new message
+     */
     public void update(String x)
     {
         this.msg=x;
     }
 
+    /**
+     * Method to handle the data transfer, over wifi concerning mouse events only
+     */
     @Override
     public void run() {
         super.run();

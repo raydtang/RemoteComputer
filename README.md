@@ -17,4 +17,4 @@ Folder RemoteComputerServer contains the server-side code. The code is written e
 <b> The project has been tested using a Computer System running Windows 10, which acted as the target Server and a 
 Mobile device running Android version 5.1.0 which acted as the client.</b>
 
-<b>NB. Modifications and bug fixes will be greatfully acknowledged.
+<b>NB. Modifications and bug fixes will be gratefully acknowledged.
